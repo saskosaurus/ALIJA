@@ -8,20 +8,10 @@
       <router-link to="/options">Opcije</router-link>
     </div>
     <router-view/>
-    
   </div>
 </template>
 
 <style lang="scss">
-
-@media only screen and (max-width: 600px) {
-  #nav{
-    position:absolute;
-    bottom: 0;
-  }
-}
-
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

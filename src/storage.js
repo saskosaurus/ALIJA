@@ -10,9 +10,8 @@ export default{
       ],
 
 
-     
+      numberOfTeams:0, 
       
-
       teamOne:{
         igraci:[],
         bodovi:0
@@ -32,7 +31,6 @@ export default{
       teamFive:{
         igraci:[],
         bodovi:0
-      },
-    
+      },   
     
     }

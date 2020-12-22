@@ -108,26 +108,28 @@ export default {
      
       storage.teamOne.igraci.push(this.playerOne);
       storage.teamOne.igraci.push(this.playerTwo);
+      storage.numberOfTeams=1;
 
     },
     addTeamTwo(){
       
       storage.teamTwo.igraci.push(this.playerThree);
       storage.teamTwo.igraci.push(this.playerFour);
-
+      storage.numberOfTeams=2;
       
     },
      addTeamThree(){
  
       storage.teamThree.igraci.push(this.playerFive);
       storage.teamThree.igraci.push(this.playerSix);
+      storage.numberOfTeams=3;
 
-      
     },
      addTeamFour(){
 
       storage.teamFour.igraci.push(this.playerSeven);
       storage.teamFour.igraci.push(this.playerEight);
+      storage.numberOfTeams=4;
 
       
     },
@@ -135,6 +137,7 @@ export default {
       //this.igrac.ime=this.playerNine; traba dodat u data() strukturu igraca sa atributom ime 
       storage.teamFive.igraci.push(this.playerNine);
       storage.teamFive.igraci.push(this.playerTen);
+      storage.numberOfTeams=5;
       
     },
     printPlayer(){
