@@ -4,14 +4,19 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-              <div v-show="cTeam.igraci[0]!=null">
-              {{cTeam.igraci[0]+" "+cTeam.igraci[1]+ " bodovi: "+cTeam.bodovi }}
-              </div>
+              
             </div>
             <div class="col-sm">
             
+            <div v-show="cTeam.igraci[0]!=null">
+              {{cTeam.igraci[0]+" "+cTeam.igraci[1]+ " bodovi: "+cTeam.bodovi }}
+            </div>
+
+            <br><br><br>
            
-            {{randomWord.ime +" "+randomWord.bodovi}}
+            RIJEC: {{randomWord.ime }}
+            <br>
+            BODOVI: {{randomWord.bodovi}}
 
             <br>
             <a class="btn btn-primary btn-lg" href="#" role="button" style="background-color:green" @click.prevent=";getTeam(counter);getWord()" onclick="style.display = 'none'">Zapocni</a>
@@ -19,10 +24,9 @@
             <a class="btn btn-primary btn-lg" href="#" role="button" style="background-color:green" @click.prevent="correct();getWord()">tocno</a>
             <a class="btn btn-primary btn-lg" href="#" role="button" style="background-color:red"  @click.prevent="incorrect();getWord()">netocno</a>
             <br>
-            <router-link to="/highscore"><a class="btn btn-primary btn-lg" href="#" role="button">Pogledaj rezultate</a> </router-link>
             </div>
             <div class="col-sm">
-            One of three columns
+           
             </div>
         </div>
     </div>

@@ -18,14 +18,13 @@
             </table>
             </div>
             <div class="col-sm">
-            <router-link to="/newGame"><a class="btn btn-primary btn-lg" href="#" role="button">Nova igra?</a> </router-link>
+            <router-link to="/newGame"><a class="btn btn-primary btn-lg" href="#" role="button" @click.prevent="resetAll()">Nova igra?</a> </router-link>
             </div>
             <div class="col-sm">
-            One of three columns
+            
             </div>
         </div>
     </div>
-
 
     
 
@@ -45,8 +44,27 @@ export default {
       teams
     }
   },
+
+  methods:{
+    resetAll(){
+      storage.teamOne.igraci=[];
+      storage.teamOne.bodovi=0;
+      storage.teamTwo.igraci=[];
+      storage.teamTwo.bodovi=0;
+      storage.teamThree.igraci=[];
+      storage.teamThree.bodovi=0;
+      storage.teamFour.igraci=[];
+      storage.teamFour.bodovi=0;
+      storage.teamFive.igraci=[];
+      storage.teamFive.bodovi=0;
+
+      this.$router.push({ path: 'newGame' })
+    }
+
+  },
   
   mounted(){
+    
     if(storage.numberOfTeams==2){
     this.teams.push(storage.teamOne);
     this.teams.push(storage.teamTwo);
@@ -72,6 +90,7 @@ export default {
 
      this.teams.sort((a, b) => b.bodovi-a.bodovi)
   }
+
 
 
 }

@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm">
-          One of three columns
+          
         </div>
         <div class="col-sm">
           
@@ -52,22 +52,22 @@
             <div class="form-group" v-if="numberPlayer==10">
               <input type="text" v-model="playerTen" class="form-control" id="exampleInputEmail10" aria-describedby="emailHelp" placeholder="Unesi ime igraca">
             </div>
-            <button v-if="numberPlayer==4" @click.prevent="addTeamOne();addTeamTwo()" type="submit" class="btn btn-primary">Dodaj timove</button>
-            <button v-if="numberPlayer==6" @click.prevent="addTeamOne();addTeamTwo();addTeamThree()" type="submit" class="btn btn-primary">Dodaj timove</button>
-            <button v-if="numberPlayer==8" @click.prevent="addTeamOne();addTeamTwo();addTeamThree();addTeamFour()" type="submit" class="btn btn-primary">timove</button>
-            <button v-if="numberPlayer==10" @click.prevent="addTeamOne();addTeamTwo();addTeamThree();addTeamFour();addTeamFive()" type="submit" class="btn btn-primary">Dodaj timove</button>
-            <button v-if="numberPlayer>=4" @click.prevent="printPlayer()" type="submit" class="btn btn-primary">print igraca</button>
+            <button v-if="numberPlayer==4" @click.prevent="addTeamOne();addTeamTwo();redirect()" type="submit" class="btn btn-primary">Pokreni igru</button>
+            <button v-if="numberPlayer==6" @click.prevent="addTeamOne();addTeamTwo();addTeamThree();redirect()" type="submit" class="btn btn-primary"><router-link to="/game">Pokreni igru</router-link></button>
+            <button v-if="numberPlayer==8" @click.prevent="addTeamOne();addTeamTwo();addTeamThree();addTeamFour();redirect()" type="submit" class="btn btn-primary"><router-link to="/game">Pokreni igru</router-link></button>
+            <button v-if="numberPlayer==10" @click.prevent="addTeamOne();addTeamTwo();addTeamThree();addTeamFour();addTeamFive();redirect()" type="submit" class="btn btn-primary"><router-link to="/game">Pokreni igru</router-link></button>
+           
           </form>
           
 
 
 
-          <router-link to="/game" v-if="numberPlayer>=4"><a class="btn btn-primary btn-lg" href="#" role="button">Pokreni igru</a> </router-link>
+          
 
          
         </div>
         <div class="col-sm">
-          One of three columns
+          
         </div>
       </div>
     </div>
@@ -82,8 +82,9 @@
 import storage from '@/storage.js'
 export default {
   name:'newGame',
+  
  data(){
-   
+    
     /*let igrac = {
       ime:''
     } */
@@ -140,13 +141,10 @@ export default {
       storage.numberOfTeams=5;
       
     },
-    printPlayer(){
-      console.log("TIM1: "+storage.teamOne.igraci+" bodovi: "+storage.teamOne.bodovi);
-      console.log("TIM2: "+storage.teamTwo.igraci+" bodovi: "+storage.teamTwo.bodovi);
-      console.log("TIM3: "+storage.teamThree.igraci+" bodovi: "+storage.teamThree.bodovi);
-      console.log("TIM4: "+storage.teamFour.igraci+" bodovi: "+storage.teamFour.bodovi);
-      console.log("TIM5: "+storage.teamFive.igraci+" bodovi: "+storage.teamFive.bodovi);
+    redirect(){
+      this.$router.push({ path: 'game' })
     }
+    
   
   }
 
@@ -154,5 +152,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>
